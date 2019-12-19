@@ -1,0 +1,44 @@
+
+一、沙河目录：1、Documents:这个目录用于存放程序中的数据，除了那些基于NSUserDefaults的设置数据。
+
+2、Library：这个目录包含两个子目录：Caches与Preferences。Preferences这个目录存放的是基于NSUserDefaults的设置数据，例如上图中可以看到一个plist文件，它就是我们上次进行的设置项，是Settings程序读写的。打开它，可以看到我们上次做的设置是保存在这个文件中的。
+
+    NSUserDefaults把plist文件存储在沙盒中的Library/Prefereces目录下,文件命名规则：Bundle ID.项目名.plist。
+
+3、tmp：我们可以在这个目录下存放临时文件，当设备接到iTunes时，tmp中的数据会进行同步。我们的程序应当要负责删除tmp目录下的内容。
+
+4.NSBundle 应用程序包：包含了程序会使用到的资源. 这些资源包含了如图像,声音,编译好的代码,nib文件(用户也会把bundle称为plug-in). 
+
+
+//**************
+     MyAccountRequestModel *_request = [[MyAccountRequestModel alloc] init];
+    
+    RegistUserInfo *requestList = [[RegistUserInfo alloc] init];
+    requestList.UserName = self.registView.userNameTextField.text;
+    requestList.UserPwd = self.registView.passwordTextField.text;
+    requestList.UserMobile = self.registView.phoneTextField.text;
+    requestList.UserVcode = self.registView.phoneIdentifyTextField.text;
+    [_request showHudProgress];
+    
+    [_request registUserRequest:requestList completion:^(MyAccountRegistResponse *result, NSError *requestError, NSError *parserError) {
+        
+        [_request hideHudProgress];
+        
+        if (result) {
+            if (result.resultFlag.integerValue == 1) {
+                //赋值数据
+            }else
+            {
+                [self showHudWithTextOnly:result.resultMsg];
+            }
+        }else
+        {
+            [self showHudWithTextOnly:kText_HttpRequestFailed];
+        }
+        
+    }];
+    
+    //******************
+
+
+
