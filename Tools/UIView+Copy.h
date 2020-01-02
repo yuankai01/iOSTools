@@ -1,8 +1,8 @@
 //
-//  UILabel+Copy.h
+//  UIView+Copy.h
 //  FarbenOffice
 //
-//  Created by Gao on 2019/12/25.
+//  Created by Gao on 2019/12/30.
 //  Copyright © 2019 Gao. All rights reserved.
 //
 
@@ -10,9 +10,10 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UILabel (Copy)
+@interface UIView (Copy)
 
 + (UILabel *)copyLabel:(UILabel *)label;
++ (UIButton *)copyButton:(UIButton *)button;
 
 @end
 

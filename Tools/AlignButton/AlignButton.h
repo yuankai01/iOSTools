@@ -9,18 +9,19 @@
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
+// left、right、top、bottom指的是title的位置
 typedef NS_ENUM(NSInteger,AlignType)
 {
-    AlignType_Default,      //默认图片在左边
-    AlignType_ImageRight,
-    AlignType_ImageTop,
-    AlignType_ImageBottom,
+    AlignType_TextRight  = 1,   //title在右边
+    AlignType_TextLeft,         //title在左边
+    AlignType_TextTop,          //title在上面
+    AlignType_TextBottom,       //title在下面
 };
 
 @interface AlignButton : UIButton
 
-@property (nonatomic,assign) AlignType AlignType;
-@property (assign, nonatomic) CGFloat padding;
+@property (nonatomic,assign) AlignType alignType;   //文字title所在位置
+@property (assign, nonatomic) CGFloat padding;      //图片和文字间距
 
 @end
 
