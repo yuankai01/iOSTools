@@ -54,9 +54,13 @@
         viewController:(UIViewController *)controller
            selectBlock:(void(^)(NSInteger selectIndex,NSString *title))selectBlock
 {
+    if (!message || message.length == 0) {
+        message = @"";
+    }
+    
     UIAlertController *alertCtrl = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
     
-    NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:message attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16.0],NSForegroundColorAttributeName:JK33TextColor}];
+    NSMutableAttributedString *messageStr = [[NSMutableAttributedString alloc] initWithString:message attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16.0],NSForegroundColorAttributeName:[UIColor grayColor]}];
     [alertCtrl setValue:messageStr forKey:@"attributedMessage"];
     
     //背景色
@@ -147,7 +151,7 @@
     //更改title大小
     if (title.length > 0) {
         NSMutableAttributedString *attributeTitle = [[NSMutableAttributedString alloc] initWithString:title];
-        [attributeTitle addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName: [UIColor blackColor]} range:NSMakeRange(0, attributeTitle.length)];
+        [attributeTitle addAttributes:@{NSFontAttributeName:[UIFont systemFontOfSize:16],NSForegroundColorAttributeName: kColor_Black} range:NSMakeRange(0, attributeTitle.length)];
         [alertCtrl setValue:attributeTitle forKey:@"attributedTitle"];
     }
 
@@ -163,7 +167,7 @@
                                      [alertCtrl dismissViewControllerAnimated:YES completion:nil];
                                  }];
 
-        [action setValue:[UIColor blackColor] forKey:@"titleTextColor"];
+        [action setValue:kColor_Black forKey:@"titleTextColor"];
         [alertCtrl addAction:action];
     }
 
