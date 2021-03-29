@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "iOSTools"
-  spec.version      = "0.0.1"
+  spec.version      = "0.0.2"
   spec.summary      = "iOSTools常用开发工具封装"
 
   # This description is used to generate tags and improve search results.
@@ -91,7 +91,7 @@ Pod::Spec.new do |spec|
   #  Not including the public_header_files will make all headers public.
   #
 
-  spec.source_files  = "iOSTools/**/*.{h,m}"
+  spec.source_files  = "iOSTools/"
   #spec.exclude_files = "Classes/Exclude"
 
   # spec.public_header_files = "Classes/**/*.h"
