@@ -16,7 +16,7 @@ Pod::Spec.new do |spec|
   #
 
   spec.name         = "GF_iOSTools"
-  spec.version      = "0.0.5"
+  spec.version      = "0.0.7"
   spec.summary      = "A short description of GF_iOSTools."
 
   # This description is used to generate tags and improve search results.
