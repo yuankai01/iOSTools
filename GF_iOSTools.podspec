@@ -1,5 +1,5 @@
 #
-#  Be sure to run `pod spec lint iOSTools.podspec' to ensure this is a
+#  Be sure to run `pod spec lint GF_iOSTools.podspec' to ensure this is a
 #  valid spec and to remove all comments including this before submitting the spec.
 #
 #  To learn more about Podspec attributes see https://guides.cocoapods.org/syntax/podspec.html
@@ -15,9 +15,9 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "iOSTools"
+  spec.name         = "GF_iOSTools"
   spec.version      = "0.0.3"
-  spec.summary      = "iOSTools常用开发工具封装"
+  spec.summary      = "A short description of GF_iOSTools."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
